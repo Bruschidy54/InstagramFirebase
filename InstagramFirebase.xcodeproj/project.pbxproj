@@ -14,6 +14,7 @@
 		CDD5187B2048D9BE0013FBD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD518792048D9BE0013FBD6 /* LaunchScreen.storyboard */; };
 		CDD518862048D9BE0013FBD6 /* InstagramFirebaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD518852048D9BE0013FBD6 /* InstagramFirebaseTests.swift */; };
 		CDD518912048D9BE0013FBD6 /* InstagramFirebaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD518902048D9BE0013FBD6 /* InstagramFirebaseUITests.swift */; };
+		CDD518A0204E1E020013FBD6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD5189F204E1E020013FBD6 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CDD5188C2048D9BE0013FBD6 /* InstagramFirebaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramFirebaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD518902048D9BE0013FBD6 /* InstagramFirebaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramFirebaseUITests.swift; sourceTree = "<group>"; };
 		CDD518922048D9BE0013FBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDD5189F204E1E020013FBD6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		CDD5186F2048D9BD0013FBD6 /* InstagramFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				CDD5189E204E1DDF0013FBD6 /* Utils */,
 				CDD518702048D9BD0013FBD6 /* AppDelegate.swift */,
 				CDD518722048D9BD0013FBD6 /* ViewController.swift */,
 				CDD518742048D9BD0013FBD6 /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				CDD518922048D9BE0013FBD6 /* Info.plist */,
 			);
 			path = InstagramFirebaseUITests;
+			sourceTree = "<group>";
+		};
+		CDD5189E204E1DDF0013FBD6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CDD5189F204E1E020013FBD6 /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDD518732048D9BD0013FBD6 /* ViewController.swift in Sources */,
+				CDD518A0204E1E020013FBD6 /* Extensions.swift in Sources */,
 				CDD518712048D9BD0013FBD6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
