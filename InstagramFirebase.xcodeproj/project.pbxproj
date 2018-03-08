@@ -12,8 +12,9 @@
 		CDD3F557204F608D009987FC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F556204F608D009987FC /* MainTabBarController.swift */; };
 		CDD3F559204F6161009987FC /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F558204F6161009987FC /* UserProfileController.swift */; };
 		CDD3F55C204F8953009987FC /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F55B204F8953009987FC /* UserProfileHeader.swift */; };
+		CDD3F55F2051041D009987FC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F55E2051041D009987FC /* LoginController.swift */; };
 		CDD518712048D9BD0013FBD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD518702048D9BD0013FBD6 /* AppDelegate.swift */; };
-		CDD518732048D9BD0013FBD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD518722048D9BD0013FBD6 /* ViewController.swift */; };
+		CDD518732048D9BD0013FBD6 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD518722048D9BD0013FBD6 /* SignUpViewController.swift */; };
 		CDD518762048D9BD0013FBD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD518742048D9BD0013FBD6 /* Main.storyboard */; };
 		CDD518782048D9BD0013FBD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD518772048D9BD0013FBD6 /* Assets.xcassets */; };
 		CDD5187B2048D9BE0013FBD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD518792048D9BE0013FBD6 /* LaunchScreen.storyboard */; };
@@ -54,9 +55,10 @@
 		CDD3F556204F608D009987FC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = /Users/dylanbruschi54/Desktop/InstagramFirebase/InstagramFirebase/MainTabBarController.swift; sourceTree = "<absolute>"; };
 		CDD3F558204F6161009987FC /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		CDD3F55B204F8953009987FC /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
+		CDD3F55E2051041D009987FC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		CDD5186D2048D9BD0013FBD6 /* InstagramFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD518702048D9BD0013FBD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDD518722048D9BD0013FBD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CDD518722048D9BD0013FBD6 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CDD518752048D9BD0013FBD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDD518772048D9BD0013FBD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CDD5187A2048D9BE0013FBD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,6 +133,15 @@
 			path = UserProfile;
 			sourceTree = "<group>";
 		};
+		CDD3F55D20510400009987FC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CDD3F55E2051041D009987FC /* LoginController.swift */,
+				CDD518722048D9BD0013FBD6 /* SignUpViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		CDD518642048D9BD0013FBD6 = {
 			isa = PBXGroup;
 			children = (
@@ -156,11 +167,11 @@
 		CDD5186F2048D9BD0013FBD6 /* InstagramFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				CDD3F55D20510400009987FC /* Login */,
 				CDD3F55A204F893E009987FC /* UserProfile */,
 				CDD5189E204E1DDF0013FBD6 /* Utils */,
 				CDD518702048D9BD0013FBD6 /* AppDelegate.swift */,
 				CDD3F556204F608D009987FC /* MainTabBarController.swift */,
-				CDD518722048D9BD0013FBD6 /* ViewController.swift */,
 				CDD518742048D9BD0013FBD6 /* Main.storyboard */,
 				CDD518772048D9BD0013FBD6 /* Assets.xcassets */,
 				CDD518792048D9BE0013FBD6 /* LaunchScreen.storyboard */,
@@ -487,12 +498,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDD518732048D9BD0013FBD6 /* ViewController.swift in Sources */,
+				CDD518732048D9BD0013FBD6 /* SignUpViewController.swift in Sources */,
 				CDD518A0204E1E020013FBD6 /* Extensions.swift in Sources */,
 				CDD3F557204F608D009987FC /* MainTabBarController.swift in Sources */,
 				CDD3F55C204F8953009987FC /* UserProfileHeader.swift in Sources */,
 				CDD3F559204F6161009987FC /* UserProfileController.swift in Sources */,
 				CDD518712048D9BD0013FBD6 /* AppDelegate.swift in Sources */,
+				CDD3F55F2051041D009987FC /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
