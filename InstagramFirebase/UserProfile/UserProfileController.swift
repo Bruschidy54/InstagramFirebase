@@ -11,8 +11,9 @@ import Firebase
 
 class UserProfileController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-        var user: User?
+    var user: User?
     let cellId = "cellId"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
