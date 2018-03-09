@@ -130,9 +130,9 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @objc func handleSignUp() {
-        guard let email = emailTextField.text, email.characters.count > 0 else { return }
-        guard let username = usernameTextField.text, username.characters.count > 0 else { return }
-        guard let password = passwordTextField.text, password.characters.count > 0 else { return }
+        guard let email = emailTextField.text, email.count > 0 else { return }
+        guard let username = usernameTextField.text, username.count > 0 else { return }
+        guard let password = passwordTextField.text, password.count > 0 else { return }
         
         FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
             
@@ -146,6 +146,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             
             let filename = NSUUID().uuidString
             
+            // TO DO: upload default image if no image selected
             FIRStorage.storage().reference().child("profile_images").child(filename).put(uploadData, metadata: nil, completion: { (metadata, err) in
                 
                 if let err = err {
