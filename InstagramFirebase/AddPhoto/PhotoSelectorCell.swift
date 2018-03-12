@@ -10,6 +10,7 @@ import UIKit
 
 class PhotoSelectorCell: UICollectionViewCell {
     
+    
     let photoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .lightGray

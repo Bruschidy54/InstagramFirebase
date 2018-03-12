@@ -12,6 +12,7 @@
 		CD5475E82053519100630789 /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5475E72053519100630789 /* PhotoSelectorController.swift */; };
 		CD5475EA20536FAB00630789 /* PhotoSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5475E920536FAB00630789 /* PhotoSelectorCell.swift */; };
 		CD5475EC2054AA0A00630789 /* PhotoSelectorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5475EB2054AA0A00630789 /* PhotoSelectorHeader.swift */; };
+		CD5475EE20573C1C00630789 /* SharePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5475ED20573C1C00630789 /* SharePhotoController.swift */; };
 		CDD3F557204F608D009987FC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F556204F608D009987FC /* MainTabBarController.swift */; };
 		CDD3F559204F6161009987FC /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F558204F6161009987FC /* UserProfileController.swift */; };
 		CDD3F55C204F8953009987FC /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F55B204F8953009987FC /* UserProfileHeader.swift */; };
@@ -58,6 +59,7 @@
 		CD5475E72053519100630789 /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
 		CD5475E920536FAB00630789 /* PhotoSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorCell.swift; sourceTree = "<group>"; };
 		CD5475EB2054AA0A00630789 /* PhotoSelectorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorHeader.swift; sourceTree = "<group>"; };
+		CD5475ED20573C1C00630789 /* SharePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoController.swift; sourceTree = "<group>"; };
 		CDD3F556204F608D009987FC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = /Users/dylanbruschi54/Desktop/InstagramFirebase/InstagramFirebase/MainTabBarController.swift; sourceTree = "<absolute>"; };
 		CDD3F558204F6161009987FC /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		CDD3F55B204F8953009987FC /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				CD5475E72053519100630789 /* PhotoSelectorController.swift */,
 				CD5475E920536FAB00630789 /* PhotoSelectorCell.swift */,
 				CD5475EB2054AA0A00630789 /* PhotoSelectorHeader.swift */,
+				CD5475ED20573C1C00630789 /* SharePhotoController.swift */,
 			);
 			path = AddPhoto;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5475EE20573C1C00630789 /* SharePhotoController.swift in Sources */,
 				CDD518732048D9BD0013FBD6 /* SignUpViewController.swift in Sources */,
 				CD5475EA20536FAB00630789 /* PhotoSelectorCell.swift in Sources */,
 				CDD518A0204E1E020013FBD6 /* Extensions.swift in Sources */,

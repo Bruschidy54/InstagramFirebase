@@ -17,6 +17,8 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     var assets = [PHAsset]()
     var selectedImage: UIImage?
     
+    var header: PhotoSelectorHeader?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,12 +37,15 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
         self.selectedImage = images[indexPath.item]
         self.collectionView?.reloadData()
         
+        let firstIndexPath = IndexPath(item: 0, section: 0)
+        collectionView.scrollToItem(at: firstIndexPath, at: .bottom, animated: true)
+        
         
     }
     
     fileprivate func assetsFetchOptions() -> PHFetchOptions {
         let fetchOptions = PHFetchOptions()
-        fetchOptions.fetchLimit = 10
+        fetchOptions.fetchLimit = 30
         let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
         fetchOptions.sortDescriptors = [sortDescriptor]
         return fetchOptions
@@ -89,6 +94,10 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! PhotoSelectorHeader
+        
+        self.header = header
+        
+        header.photoImageView.image = selectedImage
         
         if let selectedImage = selectedImage {
             if let index = self.images.index(of: selectedImage) {
@@ -141,6 +150,8 @@ class PhotoSelectorController: UICollectionViewController, UICollectionViewDeleg
     }
     
     @objc func handleNext() {
-        print("Handling next")
+        let sharePhotoController = SharePhotoController()
+        sharePhotoController.selectedImage = header?.photoImageView.image
+        navigationController?.pushViewController(sharePhotoController, animated: true)
     }
 }
