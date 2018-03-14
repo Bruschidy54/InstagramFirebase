@@ -13,6 +13,9 @@
 		CD5475EA20536FAB00630789 /* PhotoSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5475E920536FAB00630789 /* PhotoSelectorCell.swift */; };
 		CD5475EC2054AA0A00630789 /* PhotoSelectorHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5475EB2054AA0A00630789 /* PhotoSelectorHeader.swift */; };
 		CD5475EE20573C1C00630789 /* SharePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5475ED20573C1C00630789 /* SharePhotoController.swift */; };
+		CD5475F12057633C00630789 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5475F02057633C00630789 /* Post.swift */; };
+		CD5475F32057669800630789 /* UserProfilePhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5475F22057669800630789 /* UserProfilePhotoCell.swift */; };
+		CD714B452058D23F004B8EF4 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD714B442058D23F004B8EF4 /* CustomImageView.swift */; };
 		CDD3F557204F608D009987FC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F556204F608D009987FC /* MainTabBarController.swift */; };
 		CDD3F559204F6161009987FC /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F558204F6161009987FC /* UserProfileController.swift */; };
 		CDD3F55C204F8953009987FC /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F55B204F8953009987FC /* UserProfileHeader.swift */; };
@@ -60,6 +63,9 @@
 		CD5475E920536FAB00630789 /* PhotoSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorCell.swift; sourceTree = "<group>"; };
 		CD5475EB2054AA0A00630789 /* PhotoSelectorHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorHeader.swift; sourceTree = "<group>"; };
 		CD5475ED20573C1C00630789 /* SharePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoController.swift; sourceTree = "<group>"; };
+		CD5475F02057633C00630789 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		CD5475F22057669800630789 /* UserProfilePhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfilePhotoCell.swift; sourceTree = "<group>"; };
+		CD714B442058D23F004B8EF4 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		CDD3F556204F608D009987FC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = /Users/dylanbruschi54/Desktop/InstagramFirebase/InstagramFirebase/MainTabBarController.swift; sourceTree = "<absolute>"; };
 		CDD3F558204F6161009987FC /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		CDD3F55B204F8953009987FC /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
@@ -143,11 +149,20 @@
 			path = AddPhoto;
 			sourceTree = "<group>";
 		};
+		CD5475EF2057632600630789 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD5475F02057633C00630789 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CDD3F55A204F893E009987FC /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
 				CDD3F55B204F8953009987FC /* UserProfileHeader.swift */,
 				CDD3F558204F6161009987FC /* UserProfileController.swift */,
+				CD5475F22057669800630789 /* UserProfilePhotoCell.swift */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -186,6 +201,7 @@
 		CDD5186F2048D9BD0013FBD6 /* InstagramFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				CD5475EF2057632600630789 /* Models */,
 				CD5475E62053516800630789 /* AddPhoto */,
 				CDD3F55D20510400009987FC /* Login */,
 				CDD3F55A204F893E009987FC /* UserProfile */,
@@ -223,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				CDD5189F204E1E020013FBD6 /* Extensions.swift */,
+				CD714B442058D23F004B8EF4 /* CustomImageView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -521,7 +538,10 @@
 				CD5475EE20573C1C00630789 /* SharePhotoController.swift in Sources */,
 				CDD518732048D9BD0013FBD6 /* SignUpViewController.swift in Sources */,
 				CD5475EA20536FAB00630789 /* PhotoSelectorCell.swift in Sources */,
+				CD714B452058D23F004B8EF4 /* CustomImageView.swift in Sources */,
+				CD5475F12057633C00630789 /* Post.swift in Sources */,
 				CDD518A0204E1E020013FBD6 /* Extensions.swift in Sources */,
+				CD5475F32057669800630789 /* UserProfilePhotoCell.swift in Sources */,
 				CDD3F557204F608D009987FC /* MainTabBarController.swift in Sources */,
 				CDD3F55C204F8953009987FC /* UserProfileHeader.swift in Sources */,
 				CDD3F559204F6161009987FC /* UserProfileController.swift in Sources */,
