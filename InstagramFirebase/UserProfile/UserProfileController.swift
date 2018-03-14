@@ -41,7 +41,7 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         let ref = FIRDatabase.database().reference().child("posts").child(uid)
         
         ref.queryOrdered(byChild: "creationDate").observe(.childAdded) { (snapshot) in
-            guard let dictionary = snapshot.value as! [String: Any] else { return }
+            guard let dictionary = snapshot.value as? [String: Any] else { return }
             
             let post = Post(dictionary: dictionary)
             self.posts.append(post)
