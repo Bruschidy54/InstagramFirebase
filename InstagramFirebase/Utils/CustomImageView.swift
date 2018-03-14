@@ -8,7 +8,7 @@
 
 import UIKit
 
-let imageCache = [String: UIImage]()
+var imageCache = [String: UIImage]()
 
 class CustomImageView: UIImageView {
     

@@ -2,17 +2,16 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "TitleImage1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "TitleImage2x.png",
+      "filename" : "InstaTestLogo2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "TitleImage3x.png",
+      "filename" : "InstaTestLogo3x.png",
       "scale" : "3x"
     }
   ],

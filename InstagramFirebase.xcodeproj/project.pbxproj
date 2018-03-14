@@ -18,6 +18,8 @@
 		CD714B452058D23F004B8EF4 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD714B442058D23F004B8EF4 /* CustomImageView.swift */; };
 		CD714B482058D906004B8EF4 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD714B472058D906004B8EF4 /* HomeController.swift */; };
 		CD714B4A2058DA9A004B8EF4 /* HomePostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD714B492058DA9A004B8EF4 /* HomePostCell.swift */; };
+		CD714B4C2059DCD9004B8EF4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD714B4B2059DCD9004B8EF4 /* User.swift */; };
+		CD714B4E2059ED8F004B8EF4 /* FirebaseUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD714B4D2059ED8F004B8EF4 /* FirebaseUtils.swift */; };
 		CDD3F557204F608D009987FC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F556204F608D009987FC /* MainTabBarController.swift */; };
 		CDD3F559204F6161009987FC /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F558204F6161009987FC /* UserProfileController.swift */; };
 		CDD3F55C204F8953009987FC /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD3F55B204F8953009987FC /* UserProfileHeader.swift */; };
@@ -70,6 +72,8 @@
 		CD714B442058D23F004B8EF4 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		CD714B472058D906004B8EF4 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		CD714B492058DA9A004B8EF4 /* HomePostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePostCell.swift; sourceTree = "<group>"; };
+		CD714B4B2059DCD9004B8EF4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CD714B4D2059ED8F004B8EF4 /* FirebaseUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUtils.swift; sourceTree = "<group>"; };
 		CDD3F556204F608D009987FC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = /Users/dylanbruschi54/Desktop/InstagramFirebase/InstagramFirebase/MainTabBarController.swift; sourceTree = "<absolute>"; };
 		CDD3F558204F6161009987FC /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		CDD3F55B204F8953009987FC /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				CD5475F02057633C00630789 /* Post.swift */,
+				CD714B4B2059DCD9004B8EF4 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			children = (
 				CDD5189F204E1E020013FBD6 /* Extensions.swift */,
 				CD714B442058D23F004B8EF4 /* CustomImageView.swift */,
+				CD714B4D2059ED8F004B8EF4 /* FirebaseUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -549,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD714B4E2059ED8F004B8EF4 /* FirebaseUtils.swift in Sources */,
 				CD5475EE20573C1C00630789 /* SharePhotoController.swift in Sources */,
 				CDD518732048D9BD0013FBD6 /* SignUpViewController.swift in Sources */,
 				CD5475EA20536FAB00630789 /* PhotoSelectorCell.swift in Sources */,
@@ -556,6 +563,7 @@
 				CD5475F12057633C00630789 /* Post.swift in Sources */,
 				CDD518A0204E1E020013FBD6 /* Extensions.swift in Sources */,
 				CD5475F32057669800630789 /* UserProfilePhotoCell.swift in Sources */,
+				CD714B4C2059DCD9004B8EF4 /* User.swift in Sources */,
 				CDD3F557204F608D009987FC /* MainTabBarController.swift in Sources */,
 				CDD3F55C204F8953009987FC /* UserProfileHeader.swift in Sources */,
 				CDD3F559204F6161009987FC /* UserProfileController.swift in Sources */,
