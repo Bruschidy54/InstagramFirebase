@@ -42,9 +42,12 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         
         ref.queryOrdered(byChild: "creationDate").observe(.childAdded) { (snapshot) in
             guard let dictionary = snapshot.value as? [String: Any] else { return }
+
             
-            let post = Post(dictionary: dictionary)
-            self.posts.append(post)
+            guard let user = self.user else { return }
+            
+            let post = Post(user: user, dictionary: dictionary)
+            self.posts.insert(post, at: 0)
             
             DispatchQueue.main.async {
                 self.collectionView?.reloadData()
@@ -114,29 +117,15 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     
     fileprivate func fetchUser() {
         guard  let uid = FIRAuth.auth()?.currentUser?.uid else { return }
-        FIRDatabase.database().reference().child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            print(snapshot.value ?? "")
-            
-            guard let dictionary = snapshot.value as? [String: Any] else { return }
-            
-            
-            self.user = User(dictionary: dictionary)
+        
+        FIRDatabase.fetchUserWithUID(uid: uid) { (user) in
+            self.user = user
             self.navigationItem.title = self.user?.username
             
             self.collectionView?.reloadData()
-        }) { (err) in
-            print("Failed to fetch user:", err)
         }
-    }
-}
-
-struct User {
-    let username: String
-    let profileImageUrl: String
-    
-    init(dictionary: [String: Any]) {
-        self.username = dictionary["username"] as? String ?? ""
-        self.profileImageUrl = dictionary["profileImageUrl"] as? String ?? ""
         
     }
 }
+
+

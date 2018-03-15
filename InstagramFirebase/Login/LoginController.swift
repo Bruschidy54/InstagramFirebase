@@ -14,7 +14,7 @@ class LoginController: UIViewController {
     let logoContainerView: UIView = {
         let view = UIView()
         
-        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "foodTruckSampleTitle"))
+        let logoImageView = UIImageView(image: #imageLiteral(resourceName: "InstaTestLogo"))
         logoImageView.backgroundColor = .red
         logoImageView.contentMode = .scaleAspectFill
         
@@ -40,7 +40,6 @@ class LoginController: UIViewController {
     
     @objc func handleShowSignUp() {
         let signUpController = SignUpViewController()
-        print(navigationController)
         navigationController?.pushViewController(signUpController, animated: true)
     }
     
