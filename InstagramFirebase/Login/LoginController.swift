@@ -15,11 +15,10 @@ class LoginController: UIViewController {
         let view = UIView()
         
         let logoImageView = UIImageView(image: #imageLiteral(resourceName: "InstaTestLogo"))
-        logoImageView.backgroundColor = .red
         logoImageView.contentMode = .scaleAspectFill
         
         view.addSubview(logoImageView)
-        logoImageView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 100, height: 100)
+        logoImageView.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 80, height: 40)
         logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         // Change color to match FTT Color scheme
