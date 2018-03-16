@@ -115,7 +115,7 @@ class UserProfileHeader: UICollectionViewCell {
                 
                self.setupFollowStyle()
             })
-        } else {
+        } else if editProfileFollowButton.titleLabel?.text == "Follow" {
         // Follow
         let ref = FIRDatabase.database().reference().child("following").child(currentLoggedInUserId)
         

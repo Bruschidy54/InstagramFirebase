@@ -46,7 +46,6 @@ class PreviewPhotoContainerView: UIView {
                 return
             }
             
-            
             DispatchQueue.main.async {
                 let savedLabel = UILabel()
                 savedLabel.text = "Saved Successfully"

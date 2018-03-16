@@ -115,6 +115,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleDismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+        
         view.addSubview(alreadyHaveAccountButton)
         alreadyHaveAccountButton.anchor(top: nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 50)
         
@@ -127,6 +131,10 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         setupInputFields()
 
+    }
+    
+    @objc func handleDismissKeyboard() {
+        view.endEditing(true)
     }
     
     @objc func handleSignUp() {
