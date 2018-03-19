@@ -88,7 +88,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
                 post.id = key
                 
                 guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
-                FIRDatabase.database().reference().child("likes").child(key).child(uid).observe(.value, with: { (snapshot) in
+                FIRDatabase.database().reference().child("likes").child(key).child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
                     if let value = snapshot.value as? Int, value == 1 {
                         post.hasLiked = true
                     } else {
@@ -178,7 +178,8 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
             
             self.posts[indexPath.item] = post
             
-           self.collectionView?.reloadItems(at: [indexPath])
+            self.collectionView?.reloadItems(at: [indexPath])
+        
         }
     }
     
