@@ -48,12 +48,12 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     fileprivate func fetchFollowingUserIds() {
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
-        FIRDatabase.database().reference().child("following").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in            
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Database.database().reference().child("following").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in            
             guard let userIdsDictionary = snapshot.value as? [String: Any] else { return }
             
             userIdsDictionary.forEach({ (key, value) in
-                FIRDatabase.fetchUserWithUID(uid: key, completion: { (user) in
+                Database.fetchUserWithUID(uid: key, completion: { (user) in
                     self.fetchPostsWithUser(user: user)
                 })
             })
@@ -64,16 +64,16 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     fileprivate func fetchPosts() {
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
+        guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        FIRDatabase.fetchUserWithUID(uid: uid) { (user) in
+        Database.fetchUserWithUID(uid: uid) { (user) in
             self.fetchPostsWithUser(user: user)
         }
         
     }
     
     fileprivate func fetchPostsWithUser(user: User) {
-        let ref = FIRDatabase.database().reference().child("posts").child(user.uid)
+        let ref = Database.database().reference().child("posts").child(user.uid)
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             
             DispatchQueue.main.async {
@@ -87,8 +87,8 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
                 var post = Post(user: user, dictionary: dictionary)
                 post.id = key
                 
-                guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
-                FIRDatabase.database().reference().child("likes").child(key).child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                guard let uid = Auth.auth().currentUser?.uid else { return }
+                Database.database().reference().child("likes").child(key).child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
                     if let value = snapshot.value as? Int, value == 1 {
                         post.hasLiked = true
                     } else {
@@ -164,10 +164,10 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         guard let postId = post.id else { return }
         
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
+        guard let uid = Auth.auth().currentUser?.uid else { return }
         
         let values = [uid: post.hasLiked == true ? 0 : 1]
-        FIRDatabase.database().reference().child("likes").child(postId).updateChildValues(values) { (err, _) in
+        Database.database().reference().child("likes").child(postId).updateChildValues(values) { (err, _) in
             
             if let err = err {
                 print("Failed to like:", err)

@@ -124,12 +124,12 @@ class UserProfileHeader: UICollectionViewCell {
     
     @objc func handleEditProfileOrFollow() {
         
-        guard let currentLoggedInUserId = FIRAuth.auth()?.currentUser?.uid else { return }
+        guard let currentLoggedInUserId = Auth.auth().currentUser?.uid else { return }
         
         guard let userId = user?.uid else { return }
         
         if editProfileFollowButton.titleLabel?.text == "Unfollow" {
-            FIRDatabase.database().reference().child("following").child(currentLoggedInUserId).child(userId).removeValue(completionBlock: { (err, ref) in
+            Database.database().reference().child("following").child(currentLoggedInUserId).child(userId).removeValue(completionBlock: { (err, ref) in
                 if let err = err {
                     print("Failed to unfollow user:", err)
                     return
@@ -140,7 +140,7 @@ class UserProfileHeader: UICollectionViewCell {
             })
         } else if editProfileFollowButton.titleLabel?.text == "Follow" {
         // Follow
-        let ref = FIRDatabase.database().reference().child("following").child(currentLoggedInUserId)
+            let ref = Database.database().reference().child("following").child(currentLoggedInUserId)
         
         let values = [userId: 1]
         ref.updateChildValues(values) { (err, ref) in
@@ -161,7 +161,7 @@ class UserProfileHeader: UICollectionViewCell {
     }
     
     fileprivate func setupEditFollowButton() {
-        guard let currentLoggedInUserId = FIRAuth.auth()?.currentUser?.uid else { return }
+        guard let currentLoggedInUserId = Auth.auth().currentUser?.uid else { return }
         
         guard let userId = user?.uid else { return }
         // Edit profile
@@ -171,7 +171,7 @@ class UserProfileHeader: UICollectionViewCell {
             
             // Check if following
             
-            FIRDatabase.database().reference().child("following").child(currentLoggedInUserId).child(userId).observeSingleEvent(of: .value, with: { (snapshot) in
+            Database.database().reference().child("following").child(currentLoggedInUserId).child(userId).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 if let isFollowing = snapshot.value as? Int, isFollowing == 1 {
                     self.editProfileFollowButton.setTitle("Unfollow", for: .normal)

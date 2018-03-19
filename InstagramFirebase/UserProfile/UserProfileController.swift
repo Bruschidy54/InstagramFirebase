@@ -44,7 +44,7 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     fileprivate func paginatePosts() {
         guard let uid = self.user?.uid else { return }
         
-        let ref = FIRDatabase.database().reference().child("posts").child(uid)
+        let ref = Database.database().reference().child("posts").child(uid)
         
         
         var query = ref.queryOrdered(byChild: "creationDate")
@@ -57,7 +57,7 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         
         query.queryLimited(toLast: 4).observeSingleEvent(of: .value, with: { (snapshot) in
             
-            guard var allObjects = snapshot.children.allObjects as? [FIRDataSnapshot] else { return }
+            guard var allObjects = snapshot.children.allObjects as? [DataSnapshot] else { return }
             
             allObjects.reverse()
             
@@ -95,7 +95,7 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     
      fileprivate func fetchOrderedPosts() {
         guard let uid = self.user?.uid else { return }
-        let ref = FIRDatabase.database().reference().child("posts").child(uid)
+        let ref = Database.database().reference().child("posts").child(uid)
         
         ref.queryOrdered(byChild: "creationDate").observe(.childAdded) { (snapshot) in
             guard let dictionary = snapshot.value as? [String: Any] else { return }
@@ -119,7 +119,7 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Log Out", style: .destructive, handler: { (_) in
             do {
-            try FIRAuth.auth()?.signOut()
+                try Auth.auth().signOut()
                 let loginController = LoginController()
                 let navController = UINavigationController(rootViewController: loginController)
                 self.present(navController, animated: true, completion: nil)
@@ -190,9 +190,9 @@ class UserProfileController: UICollectionViewController, UICollectionViewDelegat
     
     
     fileprivate func fetchUser() {
-        let uid = userId ?? FIRAuth.auth()?.currentUser?.uid ?? ""
+        let uid = userId ?? Auth.auth().currentUser?.uid ?? ""
         
-        FIRDatabase.fetchUserWithUID(uid: uid) { (user) in
+        Database.fetchUserWithUID(uid: uid) { (user) in
             self.user = user
             self.navigationItem.title = self.user?.username
             

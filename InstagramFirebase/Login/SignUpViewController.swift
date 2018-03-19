@@ -142,7 +142,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
         guard let username = usernameTextField.text, username.count > 0 else { return }
         guard let password = passwordTextField.text, password.count > 0 else { return }
         
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error: Error?) in
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error: Error?) in
             
             if let err = error {
                 print("Failed to create user:", err)
@@ -155,7 +155,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
             let filename = NSUUID().uuidString
             
             // TO DO: upload default image if no image selected
-            FIRStorage.storage().reference().child("profile_images").child(filename).put(uploadData, metadata: nil, completion: { (metadata, err) in
+            Storage.storage().reference().child("profile_images").child(filename).putData(uploadData, metadata: nil, completion: { (metadata, err) in
                 
                 if let err = err {
                     print("Failed to upload profile image:", err)
@@ -171,7 +171,7 @@ class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, U
                 
                 let dictionaryValues = ["username": username, "profileImageUrl" : profileImageUrl]
                 let values = [uid: dictionaryValues]
-                FIRDatabase.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
                     if let err = err {
                         print("Failed to save user info into db:", err)
                         return
